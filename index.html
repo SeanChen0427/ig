@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IG 入門策略課｜從定位到被演算法看見</title>
+  <meta name="description" content="3小時讓你從搞不清楚方向，到有一份可以馬上執行的 IG 策略藍圖。實體課程，名額只有 10 位。" />
+  <meta property="og:title" content="IG 入門策略課｜從定位到被演算法看見" />
+  <meta property="og:description" content="不是你貼文不好，是你根本不知道自己在跟誰說話。3小時實體課程，名額只有10位。NT$1,499" />
+  <meta property="og:image" content="https://seanchen0427.github.io/ig/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://seanchen0427.github.io/ig/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:        #1D3461;
+      --blue-light:  #2A4A8A;
+      --orange:      #F4651A;
+      --orange-soft: #FFF0E8;
+      --orange-dark: #D4500F;
+      --text:        #1A1A1A;
+      --text-muted:  #555;
+      --bg:          #FFFFFF;
+      --bg-alt:      #F7F8FA;
+      --border:      #E5E7EB;
+      --radius:      12px;
+      --shadow-sm:   0 2px 8px rgba(0,0,0,.06);
+      --shadow-md:   0 6px 24px rgba(0,0,0,.10);
+      --shadow-lg:   0 16px 48px rgba(0,0,0,.14);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 16px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* ── 通用 ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--bg-alt); }
+    .section-blue { background: var(--blue); color: #fff; }
+    .section-orange { background: var(--orange-soft); }
+
+    .label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 900;
+      line-height: 1.3;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    .section-blue .section-title { color: #fff; }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
+
+    .section-blue .section-sub { color: rgba(255,255,255,.75); }
+
+    .divider { width: 48px; height: 4px; background: var(--orange); border-radius: 2px; margin: 20px 0 40px; }
+    .section-blue .divider { background: rgba(255,255,255,.4); }
+
+    /* ── CTA 按鈕 ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s, filter .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform .5s;
+    }
+
+    .btn:hover::after { transform: translateX(100%); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(244,101,26,.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(244,101,26,.45);
+    }
+
+    .btn-primary:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(244,101,26,.3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+
+    .btn-outline:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
+
+    .btn-lg { padding: 20px 48px; font-size: 19px; }
+    .btn-block { width: 100%; justify-content: center; }
+
+    /* 閒置呼吸動畫套在重要按鈕 */
+    @keyframes breathe {
+      0%, 100% { box-shadow: 0 6px 20px rgba(244,101,26,.35); }
+      50%       { box-shadow: 0 8px 32px rgba(244,101,26,.55); }
+    }
+    .btn-breathe { animation: breathe 3s ease-in-out infinite; }
+
+    /* ── Sticky CTA ── */
+    #sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 999;
+      background: var(--blue);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transform: translateY(100%);
+      transition: transform .3s;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.2);
+    }
+
+    #sticky-cta.visible { transform: translateY(0); }
+
+    #sticky-cta .sticky-text {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #sticky-cta .sticky-text span {
+      color: var(--orange);
+    }
+
+    #sticky-cta .btn { padding: 12px 28px; font-size: 15px; white-space: nowrap; flex-shrink: 0; }
+
+    /* ── HERO ── */
+    #hero {
+      background: linear-gradient(160deg, var(--blue) 0%, #2A4A8A 100%);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(244,101,26,.12);
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(244,101,26,.2);
+      border: 1px solid rgba(244,101,26,.4);
+      color: #FFAB80;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      letter-spacing: .04em;
+    }
+
+    .hero-tag .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+
+    .hero-title {
+      font-size: clamp(30px, 5.5vw, 52px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .hero-title .highlight { color: var(--orange); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: rgba(255,255,255,.75);
+      max-width: 580px;
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    @media (min-width: 600px) {
+      .hero-meta {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+      background: rgba(255,255,255,.07);
+      border-radius: 12px;
+      padding: 16px 8px;
+    }
+
+    .hero-meta-item .icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .hero-meta-item strong { color: #fff; display: block; font-size: 15px; white-space: nowrap; }
+    .hero-meta-item .meta-text { white-space: nowrap; font-size: 13px; }
+
+    /* ── 痛點 ── */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .pain-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .pain-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .pain-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--orange-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .pain-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--blue); }
+    .pain-card p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── 解決方案 ── */
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .usp-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--orange);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .usp-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .usp-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+
+    .usp-card h3 { font-size: 17px; font-weight: 700; color: var(--blue); margin-bottom: 10px; line-height: 1.4; }
+    .usp-card p  { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── 講師 ── */
+    .instructor-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .instructor-photo {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.25);
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .instructor-name {
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .instructor-role {
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 24px;
+    }
+
+    .instructor-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .stat {
+      text-align: center;
+      background: rgba(255,255,255,.08);
+      border-radius: 10px;
+      padding: 16px 20px;
+      min-width: 100px;
+    }
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--orange);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,.6);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .instructor-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,.75);
+      line-height: 1.75;
+    }
+
+    /* ── 課程模組 ── */
+    .module-list { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+
+    .module-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .module-item:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+
+    .module-num {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .module-content h3 { font-size: 16px; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+    .module-content p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .module-badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      background: var(--orange-soft);
+      color: var(--orange);
+      white-space: nowrap;
+    }
+
+    /* ── 定價 ── */
+    .price-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-lg);
+      max-width: 520px;
+      margin: 40px auto 0;
+      text-align: center;
+      border: 2px solid var(--orange);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card::before { display: none; }
+
+    .price-label { font-size: 13px; font-weight: 700; color: var(--orange); letter-spacing: .1em; margin-bottom: 8px; }
+    .price-course-name { font-size: 22px; font-weight: 900; color: var(--blue); margin-bottom: 4px; }
+    .price-duration { font-size: 14px; color: var(--text-muted); margin-bottom: 32px; }
+
+    .price-includes {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .price-includes li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .price-includes li:last-child { border-bottom: none; }
+
+    .price-includes .check {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--orange-soft);
+      color: var(--orange);
+      font-size: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .price-number {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .price-number sup { font-size: 24px; vertical-align: super; }
+
+    .price-seats {
+      display: inline-block;
+      background: #FEE2E2;
+      color: #DC2626;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--blue);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-q .arrow {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--orange-soft);
+      color: var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      transition: transform .3s;
+    }
+
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .35s;
+      padding: 0 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+
+    /* ── 頁尾 CTA ── */
+    #footer-cta {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    #footer-cta h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    #footer-cta p { font-size: 16px; color: rgba(255,255,255,.7); margin-bottom: 36px; }
+
+    .footer-seats {
+      font-size: 14px;
+      color: rgba(255,255,255,.5);
+      margin-top: 16px;
+    }
+
+    footer {
+      background: #111;
+      color: rgba(255,255,255,.4);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+
+    /* ── 動畫 ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RWD ── */
+    @media (max-width: 680px) {
+      .instructor-wrap { grid-template-columns: 1fr; }
+      .instructor-photo { margin: 0 auto; }
+      .price-card { padding: 36px 24px; }
+      .price-number { font-size: 44px; }
+      #sticky-cta .sticky-text { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ STICKY CTA ══ -->
+<div id="sticky-cta">
+  <div class="sticky-text">IG 入門策略課 · <span>NT$1,499</span> · 只剩 10 個名額</div>
+  <a href="https://mycal.tw/e/c42dba9d" class="btn btn-primary">立即報名 →</a>
+</div>
+
+<!-- ══ 1. HERO ══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      實體課程 · 高雄 · 名額限定 10 位
+    </div>
+    <h1 class="hero-title">
+      不是你貼文不好，<br>
+      是你<span class="highlight">根本不知道</span><br>
+      自己在跟誰說話
+    </h1>
+    <p class="hero-sub">
+      從定位到被演算法看見，第一步做錯全白費。<br>
+      3 小時讓你建立一份可以馬上執行的 IG 策略藍圖。
+    </p>
+    <a href="https://mycal.tw/e/c42dba9d" class="btn btn-primary btn-lg btn-breathe">
+      我要搶佔名額 →
+    </a>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="icon">⏱</div>
+        <div><strong>3 小時</strong><span class="meta-text">含實際操作時間</span></div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="icon">📍</div>
+        <div><strong>高雄市左營區</strong><span class="meta-text">重忠路 146 號</span></div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="icon">💰</div>
+        <div><strong>NT$ 1,499</strong><span class="meta-text">一次收費，終身受用</span></div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="icon">🔟</div>
+        <div><strong>名額僅 10 位</strong><span class="meta-text">小班制確保品質</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 2. 痛點 ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="label">你是不是也這樣</span>
+    <h2 class="section-title">開了帳號，然後呢？</h2>
+    <div class="divider"></div>
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <div class="pain-icon">😶</div>
+        <div>
+          <h3>不知道要發什麼文</h3>
+          <p>每次打開 IG 都是空白，<br>坐在那裡想半小時，最後放棄。</p>
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="pain-icon">📉</div>
+        <div>
+          <h3>發了卻沒人互動</h3>
+          <p>發文就像丟石頭進海裡，<br>讚的都是自己人，<br>不知道哪裡出問題。</p>
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="pain-icon">🤔</div>
+        <div>
+          <h3>選了商業帳號但沒用</h3>
+          <p>聽說要開商業帳號才專業，<br>開了之後卻跟以前一樣，<br>甚至感覺觸及變差了。</p>
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="pain-icon">🎯</div>
+        <div>
+          <h3>不知道要衝多少粉絲</h3>
+          <p>看別人在衝粉絲數，自己跟著衝，<br>但根本不知道衝到多少才叫夠。</p>
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="pain-icon">💸</div>
+        <div>
+          <h3>有發文，卻帶不來訂單</h3>
+          <p>每天認真發文，客人還是從別的地方來，<br>完全不知道 IG 能幫上什麼忙。</p>
+        </div>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="pain-icon">🌀</div>
+        <div>
+          <h3>Reels、輪播、限時，全部亂用</h3>
+          <p>三種格式都發，沒有策略，<br>結果哪個都做得普通，<br>哪個都沒發揮效果。</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://mycal.tw/e/c42dba9d" class="btn btn-primary">這些問題，這堂課全解決 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3. 解決方案 ══ -->
+<section class="section">
+  <div class="container">
+    <span class="label">這堂課給你的</span>
+    <h2 class="section-title">不教你「發什麼文」<br>教你「為什麼這樣發文」</h2>
+    <div class="divider"></div>
+    <p class="section-sub">大多數 IG 課程從工具操作開始教，但問題根本不在工具。<br>地基沒打好，<span style="white-space:nowrap">會用 Reels 也沒用。</span></p>
+    <div class="usp-grid" style="margin-top:40px;">
+      <div class="usp-card fade-up">
+        <div class="usp-num">亮點 01</div>
+        <h3>從訂單反推你需要多少粉絲</h3>
+        <p>不是「先衝粉再說」。用數字算出你的轉換率目標、流量需求、時程規劃，社群經營不再是瞎忙。</p>
+      </div>
+      <div class="usp-card fade-up">
+        <div class="usp-num">亮點 02</div>
+        <h3>帳號類型選錯，從一開始就輸</h3>
+        <p>個人、數位創作者、商家帳號三種功能和觸及邏輯完全不同。你現在用的那個，適合你嗎？</p>
+      </div>
+      <div class="usp-card fade-up">
+        <div class="usp-num">亮點 03</div>
+        <h3>三大工具各有任務，不能亂用</h3>
+        <p>Reels 擴散觸及、輪播留住受眾、限時動態養熟關係。搞清楚任務分工，才知道什麼時候用哪個。</p>
+      </div>
+      <div class="usp-card fade-up">
+        <div class="usp-num">亮點 04</div>
+        <h3>演算法怎麼決定推不推你</h3>
+        <p>新帳號冷啟動的關鍵行為，初期最常犯的幾個地雷，以及怎麼讓演算法把你當成「值得推的帳號」。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4. 講師 ══ -->
+<section class="section section-blue">
+  <div class="container">
+    <span class="label" style="color:#FFAB80;">關於講師</span>
+    <div class="instructor-wrap">
+      <div>
+        <img class="instructor-photo" src="https://i.ibb.co/35mStRnx/Gemini-Generated-Image-8xg52z8xg52z8xg5.jpg" alt="Sean Chen" />
+      </div>
+      <div>
+        <div class="instructor-name">熊恩 Sean</div>
+        <div class="instructor-role">社群媒體行銷公司負責人 · 企業講師 · 策略顧問</div>
+        <div class="instructor-stats">
+          <div class="stat">
+            <span class="stat-num">100<sup style="font-size:16px">+</sup></span>
+            <span class="stat-label">操盤品牌帳號</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">8</span>
+            <span class="stat-label">年社群實戰</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">跨</span>
+            <span class="stat-label">多產業類型</span>
+          </div>
+        </div>
+        <p class="instructor-desc">
+          不是單純的內容創作者，是真正在幫品牌打仗的操盤手。<br>
+          超過 100 個社群帳號的實戰經驗，讓我知道什麼有用、什麼只是在浪費時間。<br>
+          這堂課教的每一個策略，都是從真實數據和失敗案例裡淬鍊出來的，不是套教材。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5. 課程模組 ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="label">課程內容</span>
+    <h2 class="section-title">3 小時，7 個模組</h2>
+    <div class="divider"></div>
+    <p class="section-sub">從「你是誰」一路走到「你的目標數字是多少」，每個模組都有對應的實際產出。</p>
+    <div class="module-list">
+      <div class="module-item fade-up">
+        <div class="module-num">1</div>
+        <div class="module-content">
+          <div class="module-badge">策略核心</div>
+          <h3>你是誰？你要跟誰說話？</h3>
+          <p>定位三角：人設 × 受眾 × 差異化，三個同時成立，帳號才有方向。</p>
+        </div>
+      </div>
+      <div class="module-item fade-up">
+        <div class="module-num">2</div>
+        <div class="module-content">
+          <div class="module-badge">立即可做</div>
+          <h3>帳號的第一印象決定一切</h3>
+          <p>名稱、Bio、大頭貼、精選限時——這些設定背後的策略邏輯，以及常見錯誤。</p>
+        </div>
+      </div>
+      <div class="module-item fade-up">
+        <div class="module-num">3</div>
+        <div class="module-content">
+          <div class="module-badge">破除迷思</div>
+          <h3>個人、數位創作者、商家——你該選哪個？</h3>
+          <p>三種帳號類型的功能差異、觸及邏輯差異、適用情境。選錯的代價你可能還不知道。</p>
+        </div>
+      </div>
+      <div class="module-item fade-up">
+        <div class="module-num">4</div>
+        <div class="module-content">
+          <div class="module-badge">底層邏輯</div>
+          <h3>演算法怎麼判斷你值不值得推</h3>
+          <p>新帳號冷啟動機制、互動訊號的優先序、初期最容易踩的幾個地雷。</p>
+        </div>
+      </div>
+      <div class="module-item fade-up">
+        <div class="module-num">5</div>
+        <div class="module-content">
+          <div class="module-badge">工具策略</div>
+          <h3>三大工具各司其職</h3>
+          <p>Reels 的任務是擴散觸及、輪播的任務是留住受眾、限時動態的任務是養熟關係。不是哪個流行就用哪個。</p>
+        </div>
+      </div>
+      <div class="module-item fade-up">
+        <div class="module-num">6</div>
+        <div class="module-content">
+          <div class="module-badge">數字目標</div>
+          <h3>從訂單反推你的社群目標</h3>
+          <p>要幾張訂單 → 需要多少轉換率 → 需要多少流量 → 需要多少粉絲 → 多久達成。用數字說話，不再瞎忙。</p>
+        </div>
+      </div>
+      <div class="module-item fade-up" style="border-color: var(--orange); background: var(--orange-soft);">
+        <div class="module-num" style="background: var(--orange);">7</div>
+        <div class="module-content">
+          <div class="module-badge" style="background: #fff;">馬上能動</div>
+          <h3>第一週行動清單</h3>
+          <p>下課當天就能執行的具體步驟，不是概念，是清單。帶回家打勾用的那種。</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://mycal.tw/e/c42dba9d" class="btn btn-primary">報名這堂課 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7. 定價 ══ -->
+<section class="section">
+  <div class="container" style="text-align:center;">
+    <span class="label">立即報名</span>
+    <h2 class="section-title">一個下午，打通 IG 策略的任督二脈</h2>
+    <div class="divider" style="margin:20px auto 0;"></div>
+    <div class="price-card fade-up">
+      <div style="display:inline-block;background:var(--orange);color:#fff;font-size:12px;font-weight:700;padding:5px 18px;border-radius:50px;margin-bottom:16px;letter-spacing:.06em;">實體課程</div>
+      <div class="price-label">IG 入門策略課 · 第一堂</div>
+      <div class="price-course-name">從定位到被演算法看見</div>
+      <div class="price-duration">3 小時實體課程 · 高雄市左營區</div>
+      <ul class="price-includes">
+        <li><span class="check">✓</span> 7 大模組完整策略內容</li>
+        <li><span class="check">✓</span> 帳號定位工作表</li>
+        <li><span class="check">✓</span> 第一週行動清單講義</li>
+        <li><span class="check">✓</span> 目標反推計算表</li>
+        <li><span class="check">✓</span> 小班制，現場 Q&A 時間</li>
+      </ul>
+      <div class="price-number"><sup>NT$</sup>1,499</div>
+      <div class="price-seats">名額只有 10 位，報完為止</div>
+      <a href="https://mycal.tw/e/c42dba9d" class="btn btn-primary btn-lg btn-block btn-breathe">
+        立即報名，搶佔名額 →
+      </a>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">報名完成後將收到確認通知與課前資訊</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 8. FAQ ══ -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="label">常見問題</span>
+    <h2 class="section-title">你可能想問的</h2>
+    <div class="divider"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          完全沒有 IG 帳號，可以來嗎？
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          完全可以。這堂課從最底層的「你是誰、你要跟誰說話」開始，沒有帳號甚至是最好的狀態——讓我們幫你在一開始就把方向設對。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          已經有帳號但沒什麼在發文，適合嗎？
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          非常適合。這種情況通常是方向不清楚，不是你不夠努力。這堂課就是要幫你把方向搞清楚，讓你知道下一步該做什麼。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          這堂課會教發文操作或 Reels 製作嗎？
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          這堂課不教實際操作，專注在策略層。你會學到三大工具（Reels、輪播、限時動態）各自的功能和使用時機，但製作技巧會在後續課程深入。地基不打好，操作技術再強也沒用。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          課程在哪裡上？可以停車嗎？
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          高雄市左營區重忠路 146 號。詳細交通與停車資訊將在報名後的確認通知中告知。
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          這堂課適合商業目的的帳號嗎？還是個人品牌？
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          兩者都適合。課程中的「從訂單反推目標」這個模組特別適合有商業目的的帳號；定位與受眾的部分則對個人品牌同樣有效。核心邏輯是通用的。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 頁尾 CTA ══ -->
+<section id="footer-cta">
+  <div class="container">
+    <h2>還在等什麼？<br>10 個名額，不等人</h2>
+    <p>報名後你會收到課前資訊，下課你就有一份可以馬上動的策略藍圖</p>
+    <a href="https://mycal.tw/e/c42dba9d" class="btn btn-primary btn-lg btn-breathe">立即報名 →</a>
+    <div class="footer-seats">名額剩餘以報名系統顯示為準</div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Sean Chen · IG 入門策略課 · 高雄</p>
+</footer>
+
+<script>
+  // FAQ 手風琴
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Sticky CTA：滑過 Hero 後出現
+  const hero = document.getElementById('hero');
+  const sticky = document.getElementById('sticky-cta');
+  const observer = new IntersectionObserver(entries => {
+    sticky.classList.toggle('visible', !entries[0].isIntersecting);
+  }, { threshold: 0 });
+  observer.observe(hero);
+
+  // fade-up 動畫
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        fadeObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+</script>
+</body>
+</html>
