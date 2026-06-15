@@ -443,6 +443,7 @@
       flex-shrink: 0;
     }
 
+    .module-content { min-width: 0; flex: 1; }
     .module-content h3 { font-size: 16px; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
     .module-content p  { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
@@ -620,8 +621,10 @@
 
     /* ── RWD ── */
     @media (max-width: 680px) {
-      .instructor-wrap { grid-template-columns: 1fr; }
-      .instructor-photo { margin: 0 auto; }
+      .instructor-wrap { grid-template-columns: 1fr; text-align: center; }
+      .instructor-photo { margin: 0 auto 24px; }
+      .instructor-stats { justify-content: center; }
+      .instructor-desc { text-align: left; }
       .price-card { padding: 36px 24px; }
       .price-number { font-size: 44px; }
       #sticky-cta .sticky-text { display: none; }
@@ -860,7 +863,7 @@
         <div class="module-content">
           <div class="module-badge">數字目標</div>
           <h3>從訂單反推你的社群目標</h3>
-          <p>要幾張訂單 → 需要多少轉換率 → 需要多少流量 → 需要多少粉絲 → 多久達成。用數字說話，不再瞎忙。</p>
+          <p><span style="white-space:nowrap">要幾張訂單</span> → <span style="white-space:nowrap">需要多少轉換率</span> → <span style="white-space:nowrap">需要多少流量</span> → <span style="white-space:nowrap">需要多少粉絲</span> → <span style="white-space:nowrap">多久達成。</span>用數字說話，不再瞎忙。</p>
         </div>
       </div>
       <div class="module-item fade-up" style="border-color: var(--orange); background: var(--orange-soft);">
