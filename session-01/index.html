@@ -351,11 +351,22 @@
 
     /* ── 講師 ── */
     .instructor-wrap {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 48px;
-      align-items: start;
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      align-items: flex-start;
       margin-top: 40px;
+    }
+
+    @media (max-width: 680px) {
+      .instructor-wrap {
+        flex-direction: column;
+        align-items: center;
+      }
+      .instructor-wrap > div:last-child {
+        text-align: left;
+        width: 100%;
+      }
     }
 
     .instructor-photo {
@@ -582,7 +593,7 @@
     /* ── 頁尾 CTA ── */
     #footer-cta {
       background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
-      padding: 80px 0;
+      padding: 80px 0 120px;
       text-align: center;
     }
 
@@ -838,7 +849,7 @@
         <div class="module-num">3</div>
         <div class="module-content">
           <div class="module-badge">破除迷思</div>
-          <h3>個人、數位創作者、商家——你該選哪個？</h3>
+          <h3>個人、數位創作者、商家——<span style="white-space:nowrap">你該選哪個？</span></h3>
           <p>三種帳號類型的功能差異、觸及邏輯差異、適用情境。選錯的代價你可能還不知道。</p>
         </div>
       </div>
@@ -969,7 +980,7 @@
 <section id="footer-cta">
   <div class="container">
     <h2>還在等什麼？<br>10 個名額，不等人</h2>
-    <p>報名後你會收到課前資訊，下課你就有一份可以馬上動的策略藍圖</p>
+    <p>報名後你會收到課前資訊，<br><span style="white-space:nowrap">下課你就有一份可以馬上動的策略藍圖</span></p>
     <a href="https://mycal.tw/e/c42dba9d" class="btn btn-primary btn-lg btn-breathe">立即報名 →</a>
     <div class="footer-seats">名額剩餘以報名系統顯示為準</div>
   </div>
